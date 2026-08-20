@@ -7,9 +7,6 @@ from pydantic import BaseModel
 class message(BaseModel):
     usermsg:str
 app = FastAPI()
-@app.get('/')
-def home():
-    return {"message":"hello world"}
 
 @app.post('/human_prompt')
 def human_prompt(message:message):
