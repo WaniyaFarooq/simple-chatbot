@@ -16,4 +16,4 @@ def human_prompt(message:message):
     google_api_key=os.getenv("GEMINI_API_KEY")
     )
     response = llm.invoke(message.usermsg)
-    return  response.content
+    return  response.content[0]["text"]
