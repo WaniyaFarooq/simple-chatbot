@@ -314,3 +314,50 @@ textarea::placeholder {
     max-width: 85%;
   }
 }
+.conversation-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+.conversation-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 12px;
+
+  margin-bottom: 4px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
+}
+
+.conversation-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.conversation-item.active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.delete-chat {
+  border: none;
+
+  background: transparent;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  opacity: 0.5;
+}
+
+.delete-chat:hover {
+  opacity: 1;
+}
