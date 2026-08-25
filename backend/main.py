@@ -7,10 +7,8 @@ from fastapi import (
     BackgroundTasks,
     HTTPException
 )
-
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
-
 from sqlalchemy.orm import Session
 
 from dotenv import load_dotenv
@@ -37,12 +35,8 @@ from .schemas import (
     ChatRequest
 )
 
-
 load_dotenv()
-
-
 app = FastAPI()
-
 
 # ============================================
 # CORS
@@ -86,7 +80,6 @@ def get_llm():
         ),
         temperature=0
     )
-
 
 # ============================================
 # CREATE CONVERSATION
@@ -188,7 +181,7 @@ def get_messages(
 )
 def delete_conversation(
     conversation_id: str,
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db) #to get db k session
 ):
 
     conversation = (
@@ -214,7 +207,6 @@ def delete_conversation(
     ).delete(
         synchronize_session=False
     )
-
 
     db.delete(conversation)
 
